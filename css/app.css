@@ -1,10 +1,50 @@
 body {
-  background: rgb(13,34,53);
-  background: radial-gradient(circle, rgba(13,34,53,1) 0%, rgba(99,94,201,1) 50%, rgba(13,34,53,1) 100%);
+  /* background: url(../img/bck1SVG.svg); */
+  background: #0D2235;
+  background-size: cover;
+  overflow: hidden;
 }
 
 img {
     max-width: 100%;
+}
+
+.img-coin{
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 480px;
+  height: auto;
+  filter: drop-shadow(4px 0px 4px #ffffff6c);
+} 
+
+.container-imgCryptos{
+  width: 16%;
+  max-width: 280px;
+  min-width: 240px;
+  top: 5%;
+  left: 2%;
+  position: absolute;
+  display: grid;
+  grid-template-rows:repeat(4,1fr);
+  & .img-crypto{
+    width: 130px;
+    height: 140px;
+    filter: drop-shadow(4px 1px 6px #0000005b);
+  }
+  & .img-crypto__2,
+    .img-crypto__3,
+    .img-crypto__4{
+      margin: -25px 0 0 0; 
+    
+  }
+  & .img-crypto__2,
+    .img-crypto__4{
+    justify-self: end;
+  } 
+  @media screen and (width < 1500px){
+    /* background-color: #A0E60A; */
+  }
 }
 
 h1 {
@@ -13,7 +53,7 @@ h1 {
     font-weight: 600;
     font-size: 48px !important;
     text-align: center;
-    margin-bottom: 48px !important;
+    margin-bottom: 36px !important;
     text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
 .span-h1{
@@ -26,9 +66,6 @@ h1 {
     background-color: #66a2fe;
     display: block;
 } */
-.container img {
-    margin-top: 150px;
-}
 
 label {
     color: white;
@@ -85,7 +122,7 @@ p.precio{
 
 
 .spinner {
-    margin: 100px auto;
+    margin: 0px auto;
     width: 40px;
     height: 40px;
     position: relative;

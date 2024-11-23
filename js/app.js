@@ -60,7 +60,7 @@ function traemosDatosCotizacion(moneda,cripto){
         .then(result => {
             mostrarCotizacion(result,moneda,cripto);
         } )
-    }, 1500);
+    }, 1000);
 }
 
 function mostrarCotizacion(json,moneda,cripto) {
@@ -82,11 +82,11 @@ function mostrarCotizacion(json,moneda,cripto) {
     
     const precioMax = document.createElement("p");
     precioMax.classList.add("precioM","text-center","shadowPrecio");
-    precioMax.innerHTML = `Min 24hs: <span>${HIGHDAY}</span>`;
+    precioMax.innerHTML = `Max 24hs: <span>${HIGHDAY}</span>`;
     
     const precioMin = document.createElement("p");
     precioMin.classList.add("precioM","text-center","shadowPrecio");
-    precioMin.innerHTML = `Max 24hs: <span>${LOWDAY}</span>`;
+    precioMin.innerHTML = `Min 24hs: <span>${LOWDAY}</span>`;
 
     divInfo.appendChild(precio);
     divMaxMin.appendChild(precioMax);
