@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizar Criptomonedas</title>
+    <link rel="icon" href="./img/circle-dollar-to-slot-solid (1).svg" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <div class="container">
-        <div class="row">
-            <div class="one-half column">
-                <img src="img/cryptomonedas.png">
-            </div>
-            <div class="one-half column">
+        <h1>COTIZA LAS 10 <span class="span-h1">CRYPTOS</span> MAS <samp class="span-h1">DESEAS</samp> DEL MOMENTO</h1>
+        <div class="row flex justify-center items-center">
+            <div class="px-row-main column">
                 <form id="formulario">
-                    <div class="row">
-                        <label>Elige tu Moneda</label>
-                        <select
-                            class="u-full-width"
-                            id="moneda"
-                            name="moneda"
-                        >
-                                <option value="" disabled selected>Elige tu moneda</option>
-                                <option value="USD">Dolar Estadounidense</option>
-                                <option value="ARS">Peso Argentino</option>
-                                <option value="CLP">Peso Chileno</option>
-                                <option value="COP">Peso Colombiano</option>
-                                <option value="BRL">Real Brasilero</option>
-                                <option value="GBP">Libras</option>
-                                <option value="EUR">Euros</option>
+                    <div class="row margin-input">
+                        <label>¿QUE CRIPTO QUIERES COTIZAR?</label>
+                        <select class="u-full-width" id="moneda" name="moneda">
+                            <option value="" disabled selected>Elige tu moneda</option>
+                            <option value="USD">Dolar Estadounidense</option>
+                            <option value="ARS">Peso Argentino</option>
+                            <option value="CLP">Peso Chileno</option>
+                            <option value="COP">Peso Colombiano</option>
+                            <option value="BRL">Real Brasilero</option>
+                            <option value="GBP">Libras</option>
+                            <option value="EUR">Euros</option>
                         </select>
                     </div>
-
-                    <div class="row">
-                    <div>
-                        <label>Elige tu Criptomoneda</label>
-                        <select 
-                            class="u-full-width"
-                            id="criptomonedas"
-                            name="criptomoneda"
-                        >
-                            <option value="" disabled selected>Elige tu criptomoneda</option>
-                        </select>
-                    </div>
+                    <div class="row margin-input">
+                        <div>
+                            <label>¿QUE MONEDA QUIERES USAR?</label>
+                            <select class="u-full-width" id="criptomonedas" name="criptomoneda">
+                                <option value="" disabled selected>Elige tu criptomoneda</option>
+                            </select>
+                        </div>
                     </div>
                     <input class="button-primary u-full-width" type="submit" value="Cotizar" />
 
@@ -57,6 +53,7 @@
     </div>
 
     <script src="js/app.js"></script>
-    
+
 </body>
+
 </html>

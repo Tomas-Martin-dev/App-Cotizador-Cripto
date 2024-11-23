@@ -1,25 +1,31 @@
 body {
-    background-color: #0d2235;
+  background: rgb(13,34,53);
+  background: radial-gradient(circle, rgba(13,34,53,1) 0%, rgba(99,94,201,1) 50%, rgba(13,34,53,1) 100%);
 }
+
 img {
     max-width: 100%;
 }
 
 h1 {
     color: white;
-    text-align: left;
-    font-weight: 700;
-    font-size: 50px;
-    margin-bottom: 50px;
-    margin-top: 80px;
+    font-family: "Kode Mono", monospace;
+    font-weight: 600;
+    font-size: 48px !important;
+    text-align: center;
+    margin-bottom: 48px !important;
+    text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
-h1::after {
+.span-h1{
+  color: #A0E60A;
+}
+/* h1::after {
     content: '';
     width: 100px;
     height:6px;
     background-color: #66a2fe;
     display: block;
-}
+} */
 .container img {
     margin-top: 150px;
 }
@@ -27,9 +33,9 @@ h1::after {
 label {
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 2rem;
+    font-family: "Share Tech Mono", monospace;
+    font-size: 22px;
+    text-shadow: 1px 1px 3px  #ffffff36;
 }
 input[type="submit"]{
     margin-top: 20px;
@@ -37,6 +43,7 @@ input[type="submit"]{
     font-size: 20px;
     padding: 10px;
     height: auto;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 40%);
 }
 .error {
     background-color: #b7322c;
@@ -49,29 +56,31 @@ input[type="submit"]{
 }
 
 .resultado {
-    color: white;
-
+  color: white;
+  margin-top: 40px;
 }
+
 .resultado h2 {
     font-weight: bold;
     color: white;
 }
 
-
 .resultado p {
     font-size: 18px!important;
 }
+
 .resultado p span {
     font-weight: bold;
 }
+
 p.precio{
     font-size: 30px!important;
 }
 
 @media (min-width:480px) {
-    form {
+    /* form {
         margin-top: 150px;
-    }
+    } */
 }
 
 
@@ -124,3 +133,36 @@ p.precio{
       -webkit-transform: rotate(-360deg);
     }
   }
+
+.px-row-main{
+  padding: 0 245px;
+}
+
+.margin-input{
+  margin-top: 22px;
+}
+
+select, option{
+  font-family: "Kode Mono", monospace !important;
+  font-size: 16px !important;
+  font-weight: 600;
+}
+
+.alerta{
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
+}
+
+.precio{
+  font-family: "Kode Mono",monospace;
+  font-size: 36px;
+}
+
+.precioM{
+  font-family: "Kode Mono",monospace;
+  font-size: 28px;
+}
+
+.shadowPrecio{
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 40%);
+}
