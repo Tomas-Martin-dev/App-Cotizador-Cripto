@@ -32,9 +32,9 @@
   position: relative;
   display: flex;
   flex-flow: column nowrap;
+  gap: clamp(40px, 12vh, 190px);
   width: 100% !important;
   margin-top: clamp(50px, 3.5vw, 140px);
-  /* margin-top: 5vw; */
   padding: 0 20px;
   box-sizing: border-box; 
   @media screen and (width < 1440px) {

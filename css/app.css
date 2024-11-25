@@ -13,7 +13,7 @@ img {
   position: absolute;
   bottom: -10%;
   right: -5%;
-  width: 480px;
+  width: 30vw;
   height: auto;
   filter: drop-shadow(4px 0px 4px #ffffff6c);
 } 
@@ -51,9 +51,8 @@ h1 {
     color: white;
     font-family: "Kode Mono", monospace;
     font-weight: 600;
-    font-size: 48px !important;
+    font-size: 2.8vw !important;
     text-align: center;
-    margin-bottom: 36px !important;
     text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
 .span-h1{
@@ -71,16 +70,24 @@ label {
     color: white;
     text-transform: uppercase;
     font-family: "Share Tech Mono", monospace;
-    font-size: 22px;
+    font-size: 1.2vw;
     text-shadow: 1px 1px 3px  #ffffff36;
 }
 input[type="submit"]{
-    margin-top: 20px;
+    margin-top: 12px;
     font-weight: bold;
     font-size: 20px;
     padding: 10px;
     height: auto;
     box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 40%);
+    @media screen and (width < 1440px){
+      font-size: 16px;
+      padding: 8px;
+    }
+    @media screen and (width < 1020px){
+      font-size: 14px;
+      padding: 2px;
+    }
 }
 .error {
     background-color: #b7322c;
@@ -94,7 +101,7 @@ input[type="submit"]{
 
 .resultado {
   color: white;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .resultado h2 {
@@ -103,7 +110,7 @@ input[type="submit"]{
 }
 
 .resultado p {
-    font-size: 18px!important;
+    font-size: clamp(12px, 1.5vw, 24px)!important;
 }
 
 .resultado p span {
@@ -111,7 +118,7 @@ input[type="submit"]{
 }
 
 p.precio{
-    font-size: 30px!important;
+  font-size: clamp(22px, 2vw, 34px) !important;
 }
 
 @media (min-width:480px) {
@@ -173,15 +180,19 @@ p.precio{
 
 .px-row-main{
   padding: 0 245px;
+  @media screen and (width < 1440px){
+    padding: 0 180px;
+    
+  }
 }
 
 .margin-input{
-  margin-top: 22px;
+  margin-top: 2%;
 }
 
 select, option{
   font-family: "Kode Mono", monospace !important;
-  font-size: 16px !important;
+  font-size: .9vw !important;
   font-weight: 600;
 }
 
