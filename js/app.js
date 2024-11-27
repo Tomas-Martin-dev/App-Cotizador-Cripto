@@ -54,11 +54,27 @@ function traemosDatosCotizacion(moneda,cripto){
     const key = "01a18d2159e78ffe6fe6fb8d6db1fba8102918b886a75c70f6cb2563b45364a3";
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}&api_key={${key}} `;
     mostrarSpinner();
+<<<<<<< main
     fetch(url)
         .then(data => data.json() )
         .then(result => {
             mostrarCotizacion(result,moneda,cripto);
         } )
+=======
+    setTimeout(() => {
+        try {
+            fetch(url)
+            .then(data => data.json() )
+            .then(result => {
+                mostrarCotizacion(result,moneda,cripto);
+            })
+            .catch( error => mostrarMensaje("¡Error en al conexion de Internet!","errorInternet"))
+        } catch (error) {
+            console.log(error);
+            console.log("Erro conexion");
+        }
+    }, 1000);
+>>>>>>> local
 }
 
 function mostrarCotizacion(json,moneda,cripto) {
@@ -104,22 +120,36 @@ function mostrarSpinner() {
 }
 
 function mostrarMensaje(mensaje,tipo) {
-    const alertaPrevia = document.querySelector(".alerta");
-    alertaPrevia?.remove();
+    while (containerCotizacion.firstChild) {
+        containerCotizacion.firstChild.remove()
+    }
     
     const p = document.createElement("p");
     p.classList.add('alerta','bg-red-100','uppercase','font-bold','px-4','py-3','rounded','max-w-lg','mx-auto','mt-6','text-center');
     p.innerHTML = mensaje;
     if (tipo == "error") {
+<<<<<<< main
         p.classList.add('border-red-500','text-red-400');
+=======
+        p.classList.add('border-red-500','text-red-600');
+        containerCotizacion.appendChild(p)
+        setTimeout(() => {
+            p.remove()
+        }, 2000);
+    }
+    else if (tipo == "errorInternet") {
+        p.classList.add('border-red-500','text-red-600');
+        console.log("posible error en conexion de internet o en APICRYPTO");
+        containerCotizacion.appendChild(p)
+>>>>>>> local
     }
     else{
         p.classList.add('border-yellow-500','text-yellow-500');
-    }
-    form.appendChild(p)
-    setTimeout(() => {
-        p.remove()
-    }, 2000);
+        containerCotizacion.appendChild(p)
+        setTimeout(() => {
+            p.remove()
+        }, 2000);
+    }containerCotizacion
 }
 
 function limpiarHTML(container) {
