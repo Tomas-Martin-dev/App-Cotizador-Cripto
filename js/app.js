@@ -74,7 +74,7 @@ function mostrarCotizacion(json,moneda,cripto) {
     divInfo.classList.add("max-w-full", "flex", "gap-3", "flex-col", "justify-center");
 
     const divMaxMin = document.createElement("DIV"); 
-    divMaxMin.classList.add("max-w-full","flex","flex-row", "flex-nowrap", "items-center", "justify-evenly");
+    divMaxMin.classList.add("gap-3", "max-w-full","flex","flex-row", "flex-nowrap", "items-center", "justify-evenly");
 
     const precio = document.createElement("p");
     precio.classList.add("precio","text-center","shadowPrecio");

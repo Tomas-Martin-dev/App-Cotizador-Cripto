@@ -43,7 +43,7 @@
     padding: 0 60px; 
   }
   @media screen and (width < 620px) {
-    width: 80% !important;
+    width: 90% !important;
     margin-left: auto;
     margin-right: auto;
     padding: 0;

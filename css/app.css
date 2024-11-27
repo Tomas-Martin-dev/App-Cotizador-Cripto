@@ -7,6 +7,15 @@ body {
     overflow-x: hidden;
     overflow-y: visible;
   }
+  @media screen and (width <= 900px){
+    background: url("../img/bck1\(jpg\).jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: -160px 0;
+    @media screen and (orientation:landscape){
+      background-position: 0px 0;
+    }
+  }
 }
 
 img {
@@ -66,7 +75,7 @@ h1 {
     color: white;
     font-family: "Kode Mono", monospace;
     font-weight: 600;
-    font-size: clamp(26px,2.8vw,44px) !important;
+    font-size: clamp(28px,2.8vw,44px) !important;
     text-align: center;
     text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
@@ -124,16 +133,8 @@ input[type="submit"]{
     color: white;
 }
 
-.resultado p {
-    font-size: clamp(10px, 1.3vw, 24px)!important;
-}
-
 .resultado p span {
     font-weight: bold;
-}
-
-p.precio{
-  font-size: clamp(22px, 2vw, 34px) !important;
 }
 
 @media (min-width:480px) {
@@ -217,18 +218,21 @@ select, option{
 }
 
 .alerta{
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 28px);
   font-family: "Share Tech Mono", monospace;
 }
 
 .precio{
   font-family: "Kode Mono",monospace;
   font-size: 36px;
+  font-size: clamp(14px, 2vw, 34px) !important;
+  text-wrap: balance;
 }
 
 .precioM{
   font-family: "Kode Mono",monospace;
-  font-size: 28px;
+  font-size: clamp(10px, 1.3vw, 24px)!important;
+  text-wrap:balance;
 }
 
 .shadowPrecio{
