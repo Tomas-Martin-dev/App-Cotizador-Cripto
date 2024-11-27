@@ -3,6 +3,10 @@ body {
   background: #0D2235;
   background-size: cover;
   overflow: hidden;
+  @media screen and (width < 1280px){
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
 }
 
 img {
@@ -16,6 +20,13 @@ img {
   width: 30vw;
   height: auto;
   filter: drop-shadow(4px 0px 4px #ffffff6c);
+  @media screen and (width < 1280px){
+    width: 40vw;
+  }
+  @media screen and (width <= 900px){
+    display: none;
+  }
+
 } 
 
 .container-imgCryptos{
@@ -32,18 +43,22 @@ img {
     height: 140px;
     filter: drop-shadow(4px 1px 6px #0000005b);
   }
-  & .img-crypto__2,
-    .img-crypto__3,
-    .img-crypto__4{
-      margin: -25px 0 0 0; 
-    
+  & .img-crypto__2{ 
+    margin: -25px 0 0 0; 
+  }
+  & .img-crypto__3{
+    margin: -35px 0 0 0; 
+  }
+  
+  & .img-crypto__4{
+    margin: -45px 0 0 0; 
   }
   & .img-crypto__2,
     .img-crypto__4{
     justify-self: end;
   } 
-  @media screen and (width < 1500px){
-    /* background-color: #A0E60A; */
+  @media screen and (width < 1280px){
+    display: none;
   }
 }
 
@@ -51,7 +66,7 @@ h1 {
     color: white;
     font-family: "Kode Mono", monospace;
     font-weight: 600;
-    font-size: 2.8vw !important;
+    font-size: clamp(26px,2.8vw,44px) !important;
     text-align: center;
     text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
@@ -70,7 +85,7 @@ label {
     color: white;
     text-transform: uppercase;
     font-family: "Share Tech Mono", monospace;
-    font-size: 1.2vw;
+    font-size: clamp(10px,1.2vw,16px);
     text-shadow: 1px 1px 3px  #ffffff36;
 }
 input[type="submit"]{
@@ -110,7 +125,7 @@ input[type="submit"]{
 }
 
 .resultado p {
-    font-size: clamp(12px, 1.5vw, 24px)!important;
+    font-size: clamp(10px, 1.3vw, 24px)!important;
 }
 
 .resultado p span {
@@ -182,17 +197,22 @@ p.precio{
   padding: 0 245px;
   @media screen and (width < 1440px){
     padding: 0 180px;
-    
+  }
+  @media screen and (width < 1280px){
+    padding: 0 5.25%;
+  }
+  @media screen and (width < 620px){
+    padding: 0 10px;
   }
 }
 
 .margin-input{
-  margin-top: 2%;
+  margin-top: 3%;
 }
 
 select, option{
   font-family: "Kode Mono", monospace !important;
-  font-size: .9vw !important;
+  font-size: clamp(12px, 1.2vw, 18px) !important;
   font-weight: 600;
 }
 
