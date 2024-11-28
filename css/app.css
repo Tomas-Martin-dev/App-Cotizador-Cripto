@@ -1,42 +1,117 @@
 body {
-    background-color: #0d2235;
+  /* background: url(../img/bck1SVG.svg); */
+  background: #0D2235;
+  background-size: cover;
+  overflow: hidden;
+  @media screen and (width < 1280px){
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  @media screen and (width <= 900px){
+    background: url("../img/bck1\(jpg\).jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: -160px 0;
+    @media screen and (orientation:landscape){
+      background-position: 0px 0;
+    }
+  }
 }
+
 img {
     max-width: 100%;
 }
 
+.img-coin{
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  width: 30vw;
+  height: auto;
+  filter: drop-shadow(4px 0px 4px #ffffff6c);
+  @media screen and (width < 1280px){
+    width: 40vw;
+  }
+  @media screen and (width <= 900px){
+    display: none;
+  }
+
+} 
+
+.container-imgCryptos{
+  width: 16%;
+  max-width: 280px;
+  min-width: 240px;
+  top: 5%;
+  left: 2%;
+  position: absolute;
+  display: grid;
+  grid-template-rows:repeat(4,1fr);
+  & .img-crypto{
+    width: 130px;
+    height: 140px;
+    filter: drop-shadow(4px 1px 6px #0000005b);
+  }
+  & .img-crypto__2{ 
+    margin: -25px 0 0 0; 
+  }
+  & .img-crypto__3{
+    margin: -35px 0 0 0; 
+  }
+  
+  & .img-crypto__4{
+    margin: -45px 0 0 0; 
+  }
+  & .img-crypto__2,
+    .img-crypto__4{
+    justify-self: end;
+  } 
+  @media screen and (width < 1280px){
+    display: none;
+  }
+}
+
 h1 {
     color: white;
-    text-align: left;
-    font-weight: 700;
-    font-size: 50px;
-    margin-bottom: 50px;
-    margin-top: 80px;
+    font-family: "Kode Mono", monospace;
+    font-weight: 600;
+    font-size: clamp(28px,2.8vw,44px) !important;
+    text-align: center;
+    text-shadow: 1px 0px 2.700000047683716px  #ffffff;
 }
-h1::after {
+.span-h1{
+  color: #A0E60A;
+}
+/* h1::after {
     content: '';
     width: 100px;
     height:6px;
     background-color: #66a2fe;
     display: block;
-}
-.container img {
-    margin-top: 150px;
-}
+} */
 
 label {
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
-    font-size: 20px;
-    margin-top: 2rem;
+    font-family: "Share Tech Mono", monospace;
+    font-size: clamp(10px,1.2vw,16px);
+    text-shadow: 1px 1px 3px  #ffffff36;
 }
 input[type="submit"]{
-    margin-top: 20px;
+    margin-top: 12px;
     font-weight: bold;
     font-size: 20px;
     padding: 10px;
     height: auto;
+    box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 40%);
+    @media screen and (width < 1440px){
+      font-size: 16px;
+      padding: 8px;
+    }
+    @media screen and (width < 1020px){
+      font-size: 14px;
+      padding: 2px;
+    }
 }
 .error {
     background-color: #b7322c;
@@ -49,34 +124,28 @@ input[type="submit"]{
 }
 
 .resultado {
-    color: white;
-
+  color: white;
+  margin-top: 30px;
 }
+
 .resultado h2 {
     font-weight: bold;
     color: white;
 }
 
-
-.resultado p {
-    font-size: 18px!important;
-}
 .resultado p span {
     font-weight: bold;
 }
-p.precio{
-    font-size: 30px!important;
-}
 
 @media (min-width:480px) {
-    form {
+    /* form {
         margin-top: 150px;
-    }
+    } */
 }
 
 
 .spinner {
-    margin: 100px auto;
+    margin: 0px auto;
     width: 40px;
     height: 40px;
     position: relative;
@@ -124,3 +193,48 @@ p.precio{
       -webkit-transform: rotate(-360deg);
     }
   }
+
+.px-row-main{
+  padding: 0 245px;
+  @media screen and (width < 1440px){
+    padding: 0 180px;
+  }
+  @media screen and (width < 1280px){
+    padding: 0 5.25%;
+  }
+  @media screen and (width < 620px){
+    padding: 0 10px;
+  }
+}
+
+.margin-input{
+  margin-top: 3%;
+}
+
+select, option{
+  font-family: "Kode Mono", monospace !important;
+  font-size: clamp(12px, 1.2vw, 18px) !important;
+  font-weight: 600;
+}
+
+.alerta{
+  font-size: clamp(14px, 2vw, 28px);
+  font-family: "Share Tech Mono", monospace;
+}
+
+.precio{
+  font-family: "Kode Mono",monospace;
+  font-size: 36px;
+  font-size: clamp(14px, 2vw, 34px) !important;
+  text-wrap: balance;
+}
+
+.precioM{
+  font-family: "Kode Mono",monospace;
+  font-size: clamp(10px, 1.3vw, 24px)!important;
+  text-wrap:balance;
+}
+
+.shadowPrecio{
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 40%);
+}

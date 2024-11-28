@@ -54,13 +54,6 @@ function traemosDatosCotizacion(moneda,cripto){
     const key = "01a18d2159e78ffe6fe6fb8d6db1fba8102918b886a75c70f6cb2563b45364a3";
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}&api_key={${key}} `;
     mostrarSpinner();
-<<<<<<< main
-    fetch(url)
-        .then(data => data.json() )
-        .then(result => {
-            mostrarCotizacion(result,moneda,cripto);
-        } )
-=======
     setTimeout(() => {
         try {
             fetch(url)
@@ -74,7 +67,6 @@ function traemosDatosCotizacion(moneda,cripto){
             console.log("Erro conexion");
         }
     }, 1000);
->>>>>>> local
 }
 
 function mostrarCotizacion(json,moneda,cripto) {
@@ -84,27 +76,29 @@ function mostrarCotizacion(json,moneda,cripto) {
     const {PRICE, HIGHDAY, LOWDAY, CHANGEPCT24HOUR, LASTUPDATE} = json.DISPLAY[cripto][moneda];
 
     // CREO HTML    
-    const precio = document.createElement("p");
-    precio.classList.add("precio");
-    precio.innerHTML = `El precio es: <span>${PRICE}</span>`;
+    const divInfo = document.createElement("DIV"); 
+    divInfo.classList.add("max-w-full", "flex", "gap-3", "flex-col", "justify-center");
 
+    const divMaxMin = document.createElement("DIV"); 
+    divMaxMin.classList.add("gap-3", "max-w-full","flex","flex-row", "flex-nowrap", "items-center", "justify-evenly");
+
+    const precio = document.createElement("p");
+    precio.classList.add("precio","text-center","shadowPrecio");
+    precio.innerHTML = `Precio actual: <span>${PRICE}</span>`;
+    
     const precioMax = document.createElement("p");
-    precioMax.innerHTML = `Precio más alto del día <span>${HIGHDAY}</span>`;
+    precioMax.classList.add("precioM","text-center","shadowPrecio");
+    precioMax.innerHTML = `Max 24hs: <span>${HIGHDAY}</span>`;
     
     const precioMin = document.createElement("p");
-    precioMin.innerHTML = `Precio más bajo del día <span>${LOWDAY}</span>`;
-    
-    const  variacionHoras= document.createElement("p");
-    variacionHoras.innerHTML = `Variacion en las ultimas 24hs <span>${CHANGEPCT24HOUR}%</span>`;
-    
-    const  ultimaAct= document.createElement("p");
-    ultimaAct.innerHTML = `Ultima Actualizacion <span>${LASTUPDATE}</span>`;
+    precioMin.classList.add("precioM","text-center","shadowPrecio");
+    precioMin.innerHTML = `Min 24hs: <span>${LOWDAY}</span>`;
 
-    containerCotizacion.appendChild(precio);
-    containerCotizacion.appendChild(precioMax);
-    containerCotizacion.appendChild(precioMin);
-    containerCotizacion.appendChild(variacionHoras);
-    containerCotizacion.appendChild(ultimaAct);
+    divInfo.appendChild(precio);
+    divMaxMin.appendChild(precioMax);
+    divMaxMin.appendChild(precioMin);
+    divInfo.appendChild(divMaxMin);
+    containerCotizacion.appendChild(divInfo)
 }
 
 function mostrarSpinner() {
@@ -125,12 +119,9 @@ function mostrarMensaje(mensaje,tipo) {
     }
     
     const p = document.createElement("p");
-    p.classList.add('alerta','bg-red-100','uppercase','font-bold','px-4','py-3','rounded','max-w-lg','mx-auto','mt-6','text-center');
+    p.classList.add('alerta','bg-red-100','uppercase','font-bold','px-4','py-4','rounded','max-w-5xl','mx-auto','mt-6','text-center');
     p.innerHTML = mensaje;
     if (tipo == "error") {
-<<<<<<< main
-        p.classList.add('border-red-500','text-red-400');
-=======
         p.classList.add('border-red-500','text-red-600');
         containerCotizacion.appendChild(p)
         setTimeout(() => {
@@ -139,9 +130,7 @@ function mostrarMensaje(mensaje,tipo) {
     }
     else if (tipo == "errorInternet") {
         p.classList.add('border-red-500','text-red-600');
-        console.log("posible error en conexion de internet o en APICRYPTO");
         containerCotizacion.appendChild(p)
->>>>>>> local
     }
     else{
         p.classList.add('border-yellow-500','text-yellow-500');
@@ -149,7 +138,7 @@ function mostrarMensaje(mensaje,tipo) {
         setTimeout(() => {
             p.remove()
         }, 2000);
-    }containerCotizacion
+    }
 }
 
 function limpiarHTML(container) {
