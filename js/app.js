@@ -55,11 +55,17 @@ function traemosDatosCotizacion(moneda,cripto){
     const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${moneda}&api_key={${key}} `;
     mostrarSpinner();
     setTimeout(() => {
-        fetch(url)
-        .then(data => data.json() )
-        .then(result => {
-            mostrarCotizacion(result,moneda,cripto);
-        } )
+        try {
+            fetch(url)
+            .then(data => data.json() )
+            .then(result => {
+                mostrarCotizacion(result,moneda,cripto);
+            })
+            .catch( error => mostrarMensaje("¡Error en al conexion de Internet!","errorInternet"))
+        } catch (error) {
+            console.log(error);
+            console.log("Erro conexion");
+        }
     }, 1000);
 }
 
@@ -108,22 +114,31 @@ function mostrarSpinner() {
 }
 
 function mostrarMensaje(mensaje,tipo) {
-    const alertaPrevia = document.querySelector(".alerta");
-    alertaPrevia?.remove();
+    while (containerCotizacion.firstChild) {
+        containerCotizacion.firstChild.remove()
+    }
     
     const p = document.createElement("p");
     p.classList.add('alerta','bg-red-100','uppercase','font-bold','px-4','py-4','rounded','max-w-5xl','mx-auto','mt-6','text-center');
     p.innerHTML = mensaje;
     if (tipo == "error") {
         p.classList.add('border-red-500','text-red-600');
+        containerCotizacion.appendChild(p)
+        setTimeout(() => {
+            p.remove()
+        }, 2000);
+    }
+    else if (tipo == "errorInternet") {
+        p.classList.add('border-red-500','text-red-600');
+        containerCotizacion.appendChild(p)
     }
     else{
         p.classList.add('border-yellow-500','text-yellow-500');
+        containerCotizacion.appendChild(p)
+        setTimeout(() => {
+            p.remove()
+        }, 2000);
     }
-    form.appendChild(p)
-    setTimeout(() => {
-        p.remove()
-    }, 2000);
 }
 
 function limpiarHTML(container) {
