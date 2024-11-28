@@ -61,7 +61,7 @@ function traemosDatosCotizacion(moneda,cripto){
             .then(result => {
                 mostrarCotizacion(result,moneda,cripto);
             })
-            .catch( error => mostrarMensaje("¡Error en al conexion de Internet!","errorInternet"))
+            .catch( error => mostrarMensaje("¡Ohh, Ocurrio un error!","errorInternet"))
         } catch (error) {
             console.log(error);
             console.log("Erro conexion");
