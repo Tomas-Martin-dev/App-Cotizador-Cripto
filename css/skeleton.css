@@ -243,8 +243,9 @@ input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
   color: #FFF;
-  background-color: #3418bf;
-  border-color: #3418bf; 
+  background-color: #1a038d;
+  border-color: #2209a0; 
+  transition: all 0.2s;
 }
 
 
